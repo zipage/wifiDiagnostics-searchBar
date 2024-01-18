@@ -1,0 +1,152 @@
+body,
+html {
+    font-family: 'Lato', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(245, 245, 245);
+    color: #144745;
+    font-weight: bold;
+}
+
+/* CSS for devices with width less than 600px */
+@media screen and (max-width: 600px) {
+    .content-title {
+        width: 100%;
+    }
+}
+
+/* HEADER WITH NAV MENU */
+/* creates space b/w nav-items > the margins and padding */
+
+header {
+    margin: 10px;
+    padding: 10px;
+}
+
+.nav-item {
+    list-style: none;
+    float: center;
+    display: inline;
+    margin: 0px;
+    padding: 8px;
+    font-size: 18px;
+    background-color: white;
+    color: #144745;
+    border: 2px solid #144745;
+    text-align: left;
+}
+
+
+header,
+a {
+    list-style: none;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    float: right;
+    margin: 5px;
+}
+
+
+.search-box {
+    width: 600px;
+    background: #fff;
+    margin: 54 auto 0;
+    border-radius: 5px;
+    border: 2px solid #144745;
+    margin-top: -50px;
+    margin-right: 20px;
+    padding: 0px;
+    float: right;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 0;
+}
+
+input {
+    flex: 1;
+    height: 50px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+
+.search-btn {
+    background-color: white;
+    color: #144745;
+    font-size: 19px;
+    padding: 10px;
+    margin: -20px;
+    /* closes the tiny gap of the border-rights line-height */
+    cursor: pointer;
+    float: right;
+    border: white;
+    border-radius: 2px 2px;
+    border-left: solid#144745;
+    line-height: 50px;
+    /* the height of the border-left */
+}
+
+.search-btn:hover {
+    background-color: #144745;
+    color: white;
+    transition: 0.8s;
+}
+
+/* button 
+
+button {
+    background: transparent;
+    border: 0;
+    outline: 0;
+}
+
+button .fa-solid {
+    width: 25px;
+    color: #555;
+    font-size: 22px;
+    cursor: pointer;
+}
+*/
+
+::placeholder {
+    color: #555;
+}
+
+.result-box ul {
+    border-top: 0.5px solid #999;
+    /* this is the line the border of the top of the results list dropdown */
+    padding: 10px 15px;
+    /* 10px = Y-axis padding; 15px = x-axis padding */
+}
+
+.result-box ul li {
+    list-style: none;
+    border-radius: 3px;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+.result-box ul li:hover {
+    background: #144745;
+    color: white;
+    font-weight: bold;
+    transition: 0.8s;
+}
+
+.result-box {
+    max-height: 170px;
+    overflow-y: scroll;
+}
+
+/* hide the <p> of the results name in html sorry im high */
