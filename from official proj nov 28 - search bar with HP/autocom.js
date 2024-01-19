@@ -74,10 +74,10 @@ function display(articleSuggestions) { /* this function displays the results whe
         // 2. append the text content: suggestionElement.append(suggestion.keyword)
 
         console.log(suggestion)
-        keyword.append("Wi-Fi: FAQ, Setup Guide, and Troubleshooting");
-        // 👆🏻 right now we are always appending the same string, but you want to show different text for each suggestion right?
-        // question: how would you do that?
-        // have a look at the output of the console.log above -- do you see some text that you might want to use here?
+        keyword.append("Wi-Fi: FAQ, Setup Guide, and Troubleshooting".keyword);
+        // 👆🏻 right now we are always appending the same string, but we're constructing a list of suggestion elements here and we don't want the same text for each one
+        // you want to show different text for each suggestion, so how might you do that?
+        // hint: you'll have to use the "suggestion" variable. have a look at the output of the console.log above -- do you see some text that you want to use here?
 
         // 3. attach the onclick handler: suggestionElement.addEventListener('click', /* event listener function here -- see if you can figure this out based on the onclick handler we had on the li element below! */)
 
