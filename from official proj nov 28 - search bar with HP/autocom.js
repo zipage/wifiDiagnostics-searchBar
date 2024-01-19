@@ -74,14 +74,18 @@ function display(articleSuggestions) { /* this function displays the results whe
         // 2. append the text content: suggestionElement.append(suggestion.keyword)
 
         console.log(suggestion)
-        keyword.append("Wi-Fi: FAQ, Setup Guide, and Troubleshooting".keyword);
-
+        keyword.append("Wi-Fi: FAQ, Setup Guide, and Troubleshooting");
+        // 👆🏻 right now we are always appending the same string, but you want to show different text for each suggestion right?
+        // question: how would you do that?
+        // have a look at the output of the console.log above -- do you see some text that you might want to use here?
 
         // 3. attach the onclick handler: suggestionElement.addEventListener('click', /* event listener function here -- see if you can figure this out based on the onclick handler we had on the li element below! */)
 
         keyword.addEventListener('click', () => {
-            console.log(`${suggestion.keyword}`);
-
+            console.log(suggestion);
+            // here's where you'll add the code that you want to run when a suggestion is clicked
+            // hint: you have a selectInput function defined below that takes in a URL -- think about how to get a URL from the suggestion
+            // I adjusted your console.log above so you should see some useful output in the console :)
         });
 
         return keyword;
@@ -104,11 +108,13 @@ function display(articleSuggestions) { /* this function displays the results whe
     // 3. replace the contents of resultsBox with the element we just made: resultsBox.replaceChild(suggestionListElement)
 
     resultsBox.innerHTML = "<ul>" + content.join('') + "</ul>"; /* we have to display this "content - result.map" wshen we call it it will be displayed on the webpage */
-    //searchBar.addEventListener('input', (e) => {
-    //  });
-
-    /* to remove the common when auto search we use "content.join('') to hide" */
-
+    // right now the line above is saying to take content, which is an array, and join its contents together with an empty string between each element
+    // "join" works well on arrays of strings or numbers, but content doesn't contain strings or numbers (you can console.log it to verify that!)
+    // so we're probably seeing something like "[object Object]" in the output, which is no good
+    // but good news: you already created a UL element that has all your suggestions inside, just one line above!
+    // so here you want to replace everything inside resultsBox with suggestionList.
+    // instead of setting the innerHTML, try replacing that line with resultsBox.replaceChild(suggestionList)
+    // hopefully now you're seeing your suggestions (well, the first one because we removed the rest of them from the array)
 };
 
 
@@ -122,14 +128,9 @@ function selectInput(url) { // when you type and click, it will display in the i
     // TODO set window.location.href to url :)
 
     window.location.href = '[https://ecobee.com]';
+    // on the line above, what do you want to set the window's location to? hint: check this function's arguments
 
-    // inputBox.value = list.innerHTML;
-
-    inputBox.value = list.innerHTML; //this would have to related to our ul in html?
-
-    // resultsBox.innerHTML = '';
-
-    resultsBox.innerHTML = '';
+    // I removed the rest of the lines of code here because all this function needs to do is navigate :)
 }
 
 /* SEARCH-BTN WHEN USER SELECT/ENTRE'S TEXT AND PRESSES 'SEARCH' */
